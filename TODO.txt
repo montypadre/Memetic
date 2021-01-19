@@ -1,0 +1,15 @@
+Memetic.sol TODO
+----------------
+Create Posts
+List all the Posts
+Tip Posts
+
+Create NFTs
+List all the NFTs
+Buy NFTs
+Sell NFTs
+
+Adv:
+Use Post Tips to buy & sell?
+
+
