@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Web3 from 'web3';
 import Identicon from 'identicon.js';
 import './App.scss';
 import Memetic from '../abis/Memetic.json';
 import Navbar from './Navbar';
 import Main from './Main';
+import Profile from './Profile';
 
 
 class App extends Component {
@@ -93,17 +95,27 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+       <BrowserRouter>
         <Navbar account={this.state.account} />
+        <div className="container mt-5" style={{ marginTop:40}}>
+        <Switch>
+        <Route path="/profile" component={Profile}>
+          <Profile />
+        </Route>
+        <Route path="/">
         { this.state.loading
             ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-            : <Main 
+            : 
+            <Main 
                 posts={this.state.posts} 
                 createPost={this.createPost}
                 tipPost={this.tipPost}
               />
         }
-      </div>
+        </Route>
+        </Switch>
+        </div>
+       </BrowserRouter>
     );
   }
 }
