@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import Identicon from 'identicon.js';
-import Profile from './Profile';
+//import Profile from './Profile';
 
 class Navbar extends Component {
 

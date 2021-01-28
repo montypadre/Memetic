@@ -12,7 +12,6 @@ export default class Profile extends Component {
     if (typeof window.ethereum == "undefined") {
       this.setState({ needToAWeb3Browser: true });
     } else {
-      window.ethereum.autoRefreshOnNetworkChange = false; //silences warning about no autofresh on network change
       const accounts = await window.ethereum.enable();
       this.setState({ accounts });
       const box = await Box.openBox(this.state.accounts[0], window.ethereum);

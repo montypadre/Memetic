@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+//import { ethers } from 'ethers';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Web3 from 'web3';
-import Identicon from 'identicon.js';
+//import Identicon from 'identicon.js';
 import './App.scss';
 import Memetic from '../abis/Memetic.json';
 import Navbar from './Navbar';
@@ -106,7 +107,8 @@ class App extends Component {
         { this.state.loading
             ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
             : 
-            <Main 
+            <Main
+                account={this.state.account} 
                 posts={this.state.posts} 
                 createPost={this.createPost}
                 tipPost={this.tipPost}

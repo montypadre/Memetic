@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import KebabDropdown from '../index.js';
+import UserAcctMenuDropdown from './UserAcctMenuDropdown.js';
+import NewsFeedMenuDropdown from './NewsFeedMenuDropdown.js';
 import Identicon from 'identicon.js';
+import Navbar from './Navbar';
 
 class Main extends Component {
     render() {
@@ -39,7 +41,7 @@ class Main extends Component {
                           src={`data:image/png;base64,${new Identicon(post.author, 30).toString()}`} 
                         />
                         <small className="text-muted">{post.author}</small>
-                        <KebabDropdown />
+                        { post.author === this.props.account ? <UserAcctMenuDropdown /> : <NewsFeedMenuDropdown /> }
                     </div>
                     <ul id="postList" className="list-group list-group-flush">
                       <li className="list-group-item">
